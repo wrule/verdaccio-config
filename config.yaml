@@ -16,7 +16,7 @@ plugins: ./plugins
 
 # https://verdaccio.org/docs/webui
 web:
-  title: Verdaccio
+  title: JIMAO-NPM
   # comment out to disable gravatar support
   # gravatar: false
   # by default packages are ordercer ascendant (asc|desc)
@@ -149,10 +149,10 @@ server:
 # max_body_size: 10mb
 
 # https://verdaccio.org/docs/configuration#listen-port
-# listen:
+listen:
 # - localhost:4873            # default value
 # - http://localhost:4873     # same thing
-# - 0.0.0.0:4873              # listen on all addresses (INADDR_ANY)
+- 0.0.0.0:9300              # listen on all addresses (INADDR_ANY)
 # - https://example.org:4873  # if you want to use https
 # - "[::1]:4873"                # ipv6
 # - unix:/tmp/verdaccio.sock    # unix socket
