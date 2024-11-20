@@ -54,7 +54,7 @@ auth:
     file: ./htpasswd
     # Maximum amount of users allowed to register, defaults to "+inf".
     # You can set this to -1 to disable registration.
-    # max_users: 1000
+    max_users: 1000
     # Hash algorithm, possible options are: "bcrypt", "md5", "sha1", "crypt".
     # algorithm: bcrypt # by default is crypt, but is recommended use bcrypt for new installations
     # Rounds number for "bcrypt", will be ignored for other algorithms.
@@ -70,12 +70,12 @@ uplinks:
 # https://verdaccio.org/docs/protect-your-dependencies/
 # https://verdaccio.org/docs/configuration#packages
 packages:
-  '@*/*':
+  '@jimao/*':
     # scoped packages
     access: $all
     publish: $authenticated
-    unpublish: $authenticated
-    proxy: npmjs
+    unpublish: admin
+    proxy: none
 
   '**':
     # allow all users (including non-authenticated users) to read and
@@ -88,7 +88,7 @@ packages:
     # allow all known users to publish/publish packages
     # (anyone can register by default, remember?)
     publish: $authenticated
-    unpublish: $authenticated
+    unpublish: admin
 
     # if package is not available locally, proxy requests to 'npmjs' registry
     proxy: npmjs
